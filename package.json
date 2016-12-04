@@ -1,6 +1,13 @@
 {
   "name": "react-sample",
   "version": "1.0.0",
+  "description": "react-sample is a React demo application to show isomorphic rendering.",
+  "contributors": [
+    {
+      "name": "Golo Roden",
+      "email": "golo.roden@thenativeweb.io"
+    }
+  ],
   "dependencies": {
     "babel-core": "6.13.2",
     "babel-loader": "6.2.4",
@@ -18,5 +25,13 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack && node server.js"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ReactStuttgart/isomorphic-rendering.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "license": "MIT"
 }
