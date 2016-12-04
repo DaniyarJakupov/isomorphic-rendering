@@ -24,16 +24,18 @@ app.use('/', express.static(__dirname));
 app.get('*', (req, res) => {
   match({ routes, location: req.url }, (err, redirectLocation, renderProps) => {
     if (err) {
-      res.status(500).send(err.message)
-    } else if (redirectLocation) {
-      res.redirect(302, redirectLocation.pathname + redirectLocation.search)
-    } else if (renderProps) {
+      return res.status(500).send(err.message);
+    }
+    if (redirectLocation) {
+      return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+    }
+    if (renderProps) {
       const html = ReactDOMServer.renderToString(React.createElement(RouterContext, renderProps));
 
-      res.status(200).render('index', { reactOutput: html });
-    } else {
-      res.status(404).send('Not found')
+      return res.status(200).render('index', { reactOutput: html });
     }
+    
+    res.status(404).send('Not found');
   });
 });
 
