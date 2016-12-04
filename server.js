@@ -10,9 +10,7 @@ const express = require('express'),
 
 const { match, RouterContext } = require('react-router');
 
-const About = require('./About'),
-      routes = require('./Routes.jsx'),
-      Team = require('./Team');
+const routes = require('./Routes.jsx');
 
 const app = express();
 
